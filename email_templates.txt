@@ -1,0 +1,45 @@
+Email: {Email}
+Subject: Expression of Interest in {Role} Opportunities</p>
+Body: <br> Hello {Name}, </br>
+<br> I hope this note finds you well. My name is {Username}, and I am writing to express my sincere interest in the field of {Role}. Currently pursuing my Bachelors in {Major} at {University}. During my academic journey, I have developed a strong foundation in financial analysis and strategic decision-making. My coursework, coupled with multiple projects, has equipped me with a comprehensive skill set that I believe aligns well with the demands of the {Role}. </br>
+<br> I am wondering whether you would be available for a coffee chat about your experience at {Firm}. I understand you must be busy, but if you're willing, I'd be more than happy to find a time that works best for you. In case it's helpful to provide more context on my background, I have attached my resume below for your reference. I look forward to hearing back from you soon. </br>
+<br> Best, </br>
+<br> {Username} </br> 
+---
+Email: {Email}
+Subject: Expression of interest in Exploring Opportunities in {Role}
+Body: <br> Hello {Name},</br>
+<br> I trust this message finds you in good health. My name is {Username}, and I am reaching out to express my keen interest in the field of {Role}. I am currently pursuing my Bachelors in {Major} at {University}. Throughout my academic journey, I have cultivated a robust foundation in financial analysis and strategic decision-making. </br> 
+<br> The combination of my coursework and involvement in various projects and organizations has equipped me with a comprehensive skill set that I believe aligns well with the dynamic demands of the {Role}. </br> 
+<br> I am reaching out to you specifically because of your experience at {Firm}. I am eager to learn more about your journey and gain insights into the exciting opportunities within the organization. I understand your schedule may be hectic, but I was wondering if you would be available for a causal coffee chat. I believe your perspective and advice would be invaluable as I navigate the early stages of my career. I am flexible and more than willing to accommodate a time that suits you best. </br> 
+<br> I have attached my Resume below, providing additional context about my background. I would greatly appreciate the opportunity to connect with you and hear about your experiences firsthand. </br> 
+<br> Best regards, </br> 
+<br> {Username} </br> 
+---
+Email: {Email}
+Subject: Exploring Opportunities in {Role} - Coffee Chat?
+Body: <br> Hello {Name}, </br>
+<br> I hope this message finds you well. I’m {Username}, a {Major} student at the {University}, focusing on financial analysis and quantitative foundation. Your experience at {Firm} has captured my interest in {Role}, and I’m reaching out to seek your insights. My academic journey, coupled with various projects, has equipped me with skills aligned with the dynamic demands of {Role}. </br>
+<br> Given your busy schedule, I understand if time is limited. However, I’m eager to connect for a casual coffee chat to learn from your experiences. I’m flexible and can accommodate a time that suits you best. </br>
+<br> Attached is my resume for additional context. Thank you for considering my request, and I look forward to the possibility of connecting soon. </br>
+<br> Best, </br>
+<br> {Username} </br>
+---
+Email: {Email}
+Subject: Exploring {Role} Opportunities – A Not of Interest
+Body: <br> I trust this message finds you in good spirits. </br>
+<br> I’m {Username}, currently immersed in my Bachelors in {Major} at the {University}, focusing in quantitative and financial studies. I’ve cultivated a solid foundation in financial analysis and strategic decision-making throughout my academic journey, enhancing my skill set to align seamlessly with the demands of the {Role} sector. </br>
+<br> Your experience at {Firm} has piqued my interest, and I’m eager to gain insights into your day to day and discover the exciting opportunities within the organization. Given your likely busy schedule, I understand the constraints on your time. However, I’m hopeful we can arrange a brief coffee chat. Your valuable perspective and advice would be immensely beneficial as I navigate the early stages of my career. I’m flexible and more than willing to accommodate a time that suits you best. </br>
+<br> I’ve attached my resume below, offering additional context about my background. I look forward to the prospect of connecting and learning from your experience. </br>
+<br> Best regards, </br>
+<br> {Username} </br>
+---
+Email: {Email}
+Subject: Exploring {Role} Opportunities – A Not of Interest
+Body:
+<br> I trust this message finds you in good spirits. </br>
+<br> I’m {Username}, currently immersed in my Bachelors in {Major} at the {University}, focusing in quantitative and financial studies. I’ve cultivated a solid foundation in financial analysis and strategic decision-making throughout my academic journey, enhancing my skill set to align seamlessly with the demands of the {Role} sector. </br>
+<br> Your experience at {Firm} has piqued my interest, and I’m eager to gain insights into your day to day and discover the exciting opportunities within the organization. Given your likely busy schedule, I understand the constraints on your time. However, I’m hopeful we can arrange a brief coffee chat. Your valuable perspective and advice would be immensely beneficial as I navigate the early stages of my career. I’m flexible and more than willing to accommodate a time that suits you best. </br>
+<br> I’ve attached my resume below, offering additional context about my background. I look forward to the prospect of connecting and learning from your experience. </br>
+<br> Best regards, </br>
+<br> {Username} </br>

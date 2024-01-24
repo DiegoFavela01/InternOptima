@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Email Generator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        form {
+            margin: auto;
+            width: 50%;
+            padding: 10px;
+        }
+        label {
+            display: block;
+            margin: 10px 0;
+        }
+        input[type="text"], input[type="submit"], button, input[type="file"], textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 5px 0;
+            box-sizing: border-box;
+        }
+        input[type="submit"] {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+        .email-edit, .subject-edit, .body-edit {
+            width: 100%;
+            margin-bottom: 10px;
+            font-family: Arial, sans-serif;
+            font-size: 14px;
+            box-sizing: border-box;
+        }
+        .body-edit {
+            height: 150px; /* Adjust as needed */
+        }
+    </style>
+</head>
+<body>
+    <h1>Intern Optima</h1>
+    <form id="emailForm" enctype="multipart/form-data">
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="Username"><br>
+
+        <label for="major">Major:</label>
+        <input type="text" id="major" name="Major"><br>
+
+        <label for="university">University:</label>
+        <input type="text" id="university" name="University"><br>
+
+        <label for="fileUpload">Upload Excel File:</label>
+        <input type="file" id="fileUpload" name="fileUpload" accept=".xlsx, .xls"><br>
+
+        <input type="submit" value="Generate Email">
+    </form>
+
+    <div id="emailBox"></div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const emailBox = document.getElementById('emailBox');
+            const form = document.getElementById('emailForm');
+
+            form.addEventListener('submit', function(e) {
+                e.preventDefault();
+                const formData = new FormData(form);
+
+                fetch('/generate_email', {
+                    method: 'POST',
+                    body: formData
+                })
+                .then(response => response.json())
+                .then(data => {
+                    if (data.error) {
+                    console.error(data.error);
+                } else {
+                    emailBox.innerHTML = '';
+                    data.emails.forEach((emailContent, index) => {
+                        // Example parsing based on specific keywords
+                        const emailMatch = emailContent.match(/Email: (.*?)Subject:/s);
+                        const subjectMatch = emailContent.match(/Subject: (.*?)Body:/s);
+                        const bodyMatch = emailContent.match(/Body:(.*)/s);
+
+                        const email = emailMatch ? emailMatch[1].trim() : '';
+                        const subject = subjectMatch ? subjectMatch[1].trim() : '';
+                        const body = bodyMatch ? bodyMatch[1].trim() : '';
+
+                        emailBox.innerHTML += `
+                        <div id="emailEntry${index}">
+                        <p><strong>Email ${index + 1}: </strong>${email}</p>
+                        <input type="text" class="subject-edit subject-content" value="${subject}"><br>
+                        <textarea class="body-edit body-content">${body}</textarea>
+                        <button onclick="changeText(${index})">Edit</button><hr>
+                    </div>`;
+                    });
+                }
+            })
+            .catch(error => {
+                console.error('Error:', error);
+            });
+        });
+        window.changeText = function(index) {
+    var emailView = document.getElementById(`emailView${index}`);
+    var subjectContent = emailView.querySelector('.subject-content').innerText;
+    var bodyContent = emailView.querySelector('.body-content').innerText;
+
+    emailView.innerHTML = `
+        <label>Subject:</label>
+        <input type="text" id="subjectEdit${index}" class="subject-edit" value="${subjectContent}"><br>
+        <label>Body:</label>
+        <textarea id="bodyEdit${index}" class="body-edit">${bodyContent}</textarea>`;
+
+    emailView.nextElementSibling.style.display = 'none'; // Hide 'Change Text' button
+    emailView.nextElementSibling.nextElementSibling.style.display = 'inline'; // Show 'Update Email' button
+};
+
+window.updateEmail = function(index) {
+    var subjectEdit = document.getElementById(`subjectEdit${index}`);
+    var bodyEdit = document.getElementById(`bodyEdit${index}`);
+    var emailView = document.getElementById(`emailView${index}`);
+    
+    if (subjectEdit && bodyEdit) {
+        var updatedSubject = subjectEdit.value;
+        var updatedBody = bodyEdit.value;
+
+        emailView.innerHTML = `
+            <p><strong>Subject: </strong><span class="subject-content">${updatedSubject}</span></p>
+            <p><strong>Body: </strong><span class="body-content">${updatedBody}</span></p>`;
+    }
+
+    emailView.nextElementSibling.style.display = 'inline'; // Show 'Change Text' button
+    emailView.nextElementSibling.nextElementSibling.style.display = 'none'; // Hide 'Update Email' button
+};
+
+            // Function to show the example modal
+            window.showExample = function() {
+                document.getElementById('exampleModal').style.display = 'block';
+            };
+            // Function to close the example modal
+            window.closeExample = function() {
+                document.getElementById('exampleModal').style.display = 'none';
+            };
+
+            // Close the modal when clicking anywhere outside of it
+            window.onclick = function(event) {
+                var modal = document.getElementById('exampleModal');
+                if (event.target === modal) {
+                    modal.style.display = 'none';
+                }
+            };
+        });
+    </script>
+</body>
+</html>
